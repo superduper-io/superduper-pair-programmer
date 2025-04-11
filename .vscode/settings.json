@@ -5,5 +5,7 @@
     "git.branchProtection": [
         "main"
     ],
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "superduper-pair-programmer.pythonPath": "/Users/dodo/.pyenv/versions/3.10.13/envs/superduper-3.10/bin/python",
+    "superduper-pair-programmer.serverPath": "~/superduper-io/superduper/templates/copilot/server.py"
 }

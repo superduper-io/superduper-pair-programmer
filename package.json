@@ -1,11 +1,11 @@
 {
-	"name": "superduper-copilot",
+	"name": "superduper-pair-programmer",
 	"publisher": "superduper.io",
-	"displayName": "Superduper Copilot",
+	"displayName": "Superduper Pair Programmer",
 	"description": "Extension to comment on your code as you write.",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/superduper/superduper-copilot"
+		"url": "https://github.com/superduper/superduper-pair-programmer.git"
 	},
 	"version": "0.0.1",
 	"engines": {
@@ -16,18 +16,20 @@
 		"Chat"
 	],
 	"activationEvents": [
-		"onStartupFinished",
-		"onDidSaveTextDocument"
+		"onCommand:superduper-pair-programmer.start"
 	],
 	"contributes": {
-		"contributes": {
-			"configuration": {
-				"properties": {
-					"yourExtension.pythonPath": {
-						"type": "string",
-						"default": "python",
-						"description": "Path to the Python executable"
-					}
+		"configuration": {
+			"properties": {
+				"superduper-pair-programmer.pythonPath": {
+					"type": "string",
+					"default": "/Users/dodo/.pyenv/versions/3.10.13/envs/superduper-3.10/bin/python",
+					"description": "Path to the Python executable"
+				},
+				"superduper-pair-programmer.serverPath": {
+					"type": "string",
+					"default": "~/superduper-io/superduper/templates/copilot/server.py",
+					"description": "Path to the server"
 				}
 			}
 		},
@@ -175,6 +177,10 @@
 			{
 				"command": "cat.namesInEditor",
 				"title": "Use Cat Names in Editor"
+			},
+			{
+				"command": "superduper-pair-programmer.start",
+				"title": "Start Superduper Pair Programmer"
 			}
 		]
 	},
@@ -188,7 +194,6 @@
 	"dependencies": {
 		"@vscode/chat-extension-utils": "^0.0.0-alpha.1",
 		"@vscode/prompt-tsx": "^0.3.0-alpha.12",
-		"vsce": "^2.15.0",
 		"ws": "^8.18.1"
 	},
 	"devDependencies": {
@@ -199,6 +204,7 @@
 		"@types/ws": "^8.18.1",
 		"eslint": "^9.13.0",
 		"typescript": "^5.8.2",
-		"typescript-eslint": "^8.26.0"
+		"typescript-eslint": "^8.26.0",
+		"vsce": "^2.15.0"
 	}
 }
